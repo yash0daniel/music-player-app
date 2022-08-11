@@ -1,0 +1,15 @@
+<mat-card class="footer">
+    <!-- <div class="row"> -->
+    <div class="playing" (click)="onPlayPause()">
+        <mat-icon>shuffle</mat-icon>
+        <mat-icon>skip_previous</mat-icon>
+        <mat-icon *ngIf="play_pause">play_circle_filled</mat-icon>
+        <mat-icon *ngIf="!play_pause">pause_circle_filled</mat-icon>
+        <mat-icon>skip_next</mat-icon>
+        <mat-icon>repeat</mat-icon>
+    </div>
+    <div class="playing">
+        <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+    </div>
+    <!-- </div> -->
+</mat-card>
