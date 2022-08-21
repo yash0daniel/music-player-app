@@ -3,18 +3,30 @@
     width: 100%;
     position: fixed;
     bottom: 0;
+    // padding-top: 4px;
 }
 
-mat-icon{
+mat-icon {
     margin: 0 1% 0 1%;
 }
 
 .playing {
     text-align: center;
+    margin: 3%;
 }
 
-mat-progress-bar {
-    // justify-content: center;
-    // display: flex;
-    width: 50%;
+.music_image {
+    text-align: left;
+    margin: auto;
 }
+
+.volume {
+    text-align: end;
+    margin: auto;
+}
+
+// mat-progress-bar {
+// justify-content: center;
+// display: flex;
+// width: 50%;
+// }
