@@ -19,8 +19,8 @@
             </div>
         </div>
         <div class="volume col-md-1">
-            <mat-icon *ngIf="volume_button">volume_up</mat-icon>
-            <mat-icon *ngIf="!volume_button">volume_off</mat-icon>
+            <mat-icon *ngIf="volume_button" (click)="onVolume()">volume_up</mat-icon>
+            <mat-icon *ngIf="!volume_button" (click)="onVolume()">volume_off</mat-icon>
         </div>
         <div class="volume col-md-2">
             <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
