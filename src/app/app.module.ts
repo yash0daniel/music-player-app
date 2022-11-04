@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { AangularMaterial } from '../angular.material.module'
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { MaterialModule } from './material.module';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { FooterComponent } from './footer/footer.component';
     BrowserModule,
     AppRoutingModule,
     AangularMaterial,
+    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
