@@ -15,7 +15,7 @@
                 <mat-icon>repeat</mat-icon>
             </div>
             <div class="playing">
-                <mat-progress-bar mode="determinate" value="{{songTime}}"></mat-progress-bar>
+                <mat-progress-bar mode="determinate" value="{{ state.progressBar }}"></mat-progress-bar>
             </div>
         </div>
         <div class="volume col-md-3">
@@ -28,7 +28,10 @@
                     <button mat-button>-</button>
                 </div> -->
                 <div class="volume col-md-6">
-                    <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+                    <mat-slider #volume (change)="changeVolume($event)" min="0" max="100" step="1" value=volume>
+                    </mat-slider>
+                    {{ volume.value }}
+                    <!-- <mat-progress-bar mode="determinate" value="40"></mat-progress-bar> -->
                 </div>
                 <!-- <div class="volume col-md-2">
                     <button mat-button>+</button>
