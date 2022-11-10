@@ -16,6 +16,15 @@ export class AudioService {
   // audioObj = new Audio(this.newUrl);
   audioObj = new Audio();
 
+  songsList = [
+    "https://ia601009.us.archive.org/8/items/EdSheeranPerfectOfficialMusicVideoListenVid.com/Imagine_Dragons_-_Thunder%5BListenVid.com%5D.mp3"
+    , "https://ia601009.us.archive.org/8/items/EdSheeranPerfectOfficialMusicVideoListenVid.com/Camila_Cabello_-_Havana_Audio_ft_Young_Thug%5BListenVid.com%5D.mp3"
+    , "https://ia601009.us.archive.org/8/items/EdSheeranPerfectOfficialMusicVideoListenVid.com/G-Eazy_-_No_Limit_Audio_ft_AAP_Rocky_Cardi_B%5BListenVid.com%5D.mp3"
+    , "https://ia601009.us.archive.org/8/items/EdSheeranPerfectOfficialMusicVideoListenVid.com/Post_Malone_-_rockstar_ft_21_Savage_Official_Audio%5BListenVid.com%5D.mp3"
+  ]
+
+  count: any = 0;
+
   audioEvents = [
     "ended",
     "error",
@@ -129,17 +138,33 @@ export class AudioService {
   }
 
   play() {
-    console.log('Play audio')
     this.audioObj.play();
   }
 
   pause() {
-    console.log("Paused audio")
     this.audioObj.pause();
   }
 
-  stop() {
+  stop(track: any) {
+    // if (track) {
+    //   this.count++
+    //   console.log(this.count)
+    //   this.stop$.next(this.songsList[this.count]);
+    // }
+    // else {
+    //   this.count++
+    //   console.log(this.count)
+    //   this.stop$.next(this.songsList[this.count]);
+    // }
     this.stop$.next();
+  }
+
+  volumeFunction(volume: any) {
+    this.audioObj.volume = volume;
+  }
+
+  repeatFuntion(repeat: any) {
+    this.audioObj.loop = repeat
   }
 
   progressbar() {
@@ -152,7 +177,6 @@ export class AudioService {
   }
 
   formatTime(time: number, format: string = "HH:mm:ss") {
-    // console.log("formattime")
     const momentTime = time * 1000;
     return moment.utc(momentTime).format(format);
   }
